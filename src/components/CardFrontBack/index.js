@@ -6,7 +6,7 @@ window.CardFrontBack.handleClick = (event) =>{
     event.target.closest(".card-front-back").classList.toggle("-active");
 };
 
-function CardFrontBack(){
+function CardFrontBack(icon, altIcon){
     
 
     return /*html*/`
@@ -16,7 +16,7 @@ function CardFrontBack(){
     </div>
 
     <div class="card -back">
-    ${CardGame('javascript', 'Logo do JavaScript')}
+    ${CardGame(icon, altIcon)}
     </div>
     </article>
     `
