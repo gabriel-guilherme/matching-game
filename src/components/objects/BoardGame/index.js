@@ -1,7 +1,6 @@
 import './style.css';
 import CardFrontBack from '../../CardFrontBack';
 import cards from "./data";
-import endScreen from '../../endScreen';
 
 let checkData = [];
 
@@ -11,7 +10,6 @@ window.BoardGame.handleClick = () =>{
     const $cardsActive = $boardGame.querySelectorAll('.card-front-back.-active');
     const $playerArrow = document.querySelector('.arrow-down')
     const $playerScore = document.querySelector(`.player-score[data-player="${$playerArrow.getAttribute('data-currentplayer')}"]`)
-    console.log($playerScore)
     //checkData.push($cardsActive.data)
     $cardsActive.forEach((card) => checkData.push(card.getAttribute('data-check')))
     if($cardsActive.length >= 2){
@@ -38,8 +36,10 @@ window.BoardGame.handleClick = () =>{
             let player2 = document.querySelector('.player-score[data-player="2"]')
             if(player1.getAttribute('data-points')>player2.getAttribute('data-points')){
                 document.querySelector('.end-screen').classList.add('-active')
+                document.querySelector('.player-winner').innerHTML = 'Player1'
             }else{
-                console.log('2 ganhou')
+                document.querySelector('.end-screen').classList.add('-active')
+                document.querySelector('.player-winner').innerHTML = 'Player2'
             }
         }
     }
@@ -66,7 +66,6 @@ function BoardGame(amountCards){
     return /*html*/`
     <section class="board-game" onclick="BoardGame.handleClick(event)">
     ${$htmlCards}
-
     </section>
     
     `

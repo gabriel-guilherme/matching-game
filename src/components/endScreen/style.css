@@ -1,19 +1,97 @@
 .end-screen{
     z-index: 3;
-    width: 0px;
-    height: 0px;
-    top: 245px;
     position: absolute;
+    width: 100vw;
+    height: calc(100vh - 222px);
+    top: 0%;
+    left: 0%;
+    background: #3A4042;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    display: flex;
+    padding-top: 222px;
+    justify-content: center;
 }
 
 .end-screen.-active{
-    width: 40px;
-    height: 30px;
-
-
-    transform: scale(15);
-
-    transition: width ease-in-out 1s, height ease-in-out 1s, transform ease-in-out 3s;
-    border: 1px solid black;
+    transform: rotateY(0deg);
+    transition: transform ease-in-out 3s;
     
 }
+
+.box-winner{
+    position: absolute;
+    width: 280px;
+    height: 216px;
+    background-color: var(--color-pomb-and-power);
+    border: 4px solid var(--color-floral-white);
+}
+
+.player-winner{
+    position: absolute;
+    width: 126px;
+    height: 18px;
+    top: 25px;
+    left: calc(50% - 126px/2 + 0.5px);
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--color-floral-white);
+}
+
+.winner{
+    position: absolute;
+    width: 225px;
+    height: 25px;
+    left: calc(50% - 225px/2);
+    top: 55px;
+    font-weight: 400;
+    font-size: 25px;
+    color: var(--color-mantis);
+    letter-spacing: -13px;
+}
+
+@keyframes waveAnim {
+    0%, 40%, 100%{
+        transform: translateY(0)
+    }
+    20%{
+        transform: translateY(-13px);
+    }
+}
+
+.winner>span{
+    position: relative;
+    animation: waveAnim 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+    display: inline-block;
+
+}
+
+
+
+.trophy-image{
+    background-image: url("/images/trophy.png");
+    background-position: 100% 100%;
+    width: 161px;
+    height: 160px;
+    transform: scale(0.38);
+    top: 40px;
+    left: 58px;
+    position: absolute;
+}
+
+.restart-button{
+    background-color: var(--color-fiery-rose);
+    border: 2px solid var(--color-floral-white);
+    box-sizing: border-box;
+    font-family: "Press Start 2P", cursive;
+    top: 162px;
+    left: 20px;
+    width: 240px;
+    height: 40px;
+    font-weight: 400;
+    font-size: 18px;
+    position: absolute;
+    color: var(--color-floral-white);
+}
+

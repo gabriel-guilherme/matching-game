@@ -4,14 +4,20 @@ import './src/styles/elements/base.css';
 
 import BoardGame from './src/components/objects/BoardGame';
 import ScoreBoard from './src/components/objects/ScoreBoard';
+import endScreen from './src/components/endScreen';
 
 
-const $root = document.querySelector("#root");
+window.main = () => {
+    const $root = document.querySelector("#root");
 
 
-$root.insertAdjacentHTML("afterend", 
-`
-${ScoreBoard()}
-${BoardGame(6)}
-`
-);
+    $root.insertAdjacentHTML("afterend", 
+    `
+    ${ScoreBoard()}
+    ${BoardGame(6)}
+    ${endScreen(main)}
+    `
+    );
+}
+
+main();
