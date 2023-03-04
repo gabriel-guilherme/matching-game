@@ -3,5 +3,5 @@ Um jogo de memória finalizado do "Curso de JS para React" inacabado do Marco Br
 
 ## Requesitos
 - Foi ultilizado no projeto o Node.
-- `npm` : install
-- `npm` : run dev
+- `npm install`
+- `npm run dev`
