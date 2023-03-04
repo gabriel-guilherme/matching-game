@@ -1,4 +1,5 @@
 .vs-player{
     color: var(--color-sandsotrm);
-    font-size: 0.08rerm;
+    font-size: 1.5rem;
+    cursor: default;
 }

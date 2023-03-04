@@ -4,6 +4,13 @@
     transform: rotateY(0deg);
     transition: transform 600ms cubic-bezier(0.42,0,0.54,1.68);
     cursor: pointer;
+    
+}
+
+.card-front-back:hover{
+    transition: transform ease-in-out 20ms;
+    transform: scale(1.15);
+    
 }
 
 .card-front-back.-active{

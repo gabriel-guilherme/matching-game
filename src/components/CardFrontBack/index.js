@@ -3,7 +3,10 @@ import CardGame from "../CardGame";
 
 window.CardFrontBack={};
 window.CardFrontBack.handleClick = (event) =>{
-    event.target.closest(".card-front-back").classList.toggle("-active");
+    if(event.target.closest(".card-front-back").classList[1] !== '-active'){
+        event.target.closest(".card-front-back").classList.toggle("-active");
+    }
+    
     
 };
 

@@ -36,6 +36,7 @@
     font-weight: 400;
     font-size: 18px;
     color: var(--color-floral-white);
+    cursor: default;
 }
 
 .winner{
@@ -48,6 +49,7 @@
     font-size: 25px;
     color: var(--color-mantis);
     letter-spacing: -13px;
+    cursor: default;
 }
 
 @keyframes waveAnim {
@@ -93,5 +95,11 @@
     font-size: 18px;
     position: absolute;
     color: var(--color-floral-white);
+}
+
+.restart-button:hover{
+    transform: scale(1.1);
+    transition: transform ease-in-out 20ms;
+    cursor:pointer;
 }
 
