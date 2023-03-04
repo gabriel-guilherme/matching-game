@@ -61,7 +61,7 @@ window.shuffleArray = cards =>{
 }
 
 function BoardGame(amountCards){
-    //shuffleArray(cards)
+    shuffleArray(cards)
     
     const htmlCardsList = cards.map((card)=>CardFrontBack(card.icon, card.altIcon, card.data));
     const $htmlCards = htmlCardsList.join('');
