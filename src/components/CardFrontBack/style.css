@@ -11,6 +11,11 @@
     transition: transform 600ms cubic-bezier(0.42,0,0.54,1.68);
 }
 
+.card-front-back.-solid-active{
+    transform: rotateY(180deg);
+    transition: transform 600ms cubic-bezier(0.42,0,0.54,1.68);
+}
+
 .card-front-back>.-front{
     position: absolute;
     backface-visibility: hidden;

@@ -1,0 +1,19 @@
+.end-screen{
+    z-index: 3;
+    width: 0px;
+    height: 0px;
+    top: 245px;
+    position: absolute;
+}
+
+.end-screen.-active{
+    width: 40px;
+    height: 30px;
+
+
+    transform: scale(15);
+
+    transition: width ease-in-out 1s, height ease-in-out 1s, transform ease-in-out 3s;
+    border: 1px solid black;
+    
+}
