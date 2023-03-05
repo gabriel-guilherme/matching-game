@@ -50,6 +50,7 @@
     color: var(--color-mantis);
     letter-spacing: -13px;
     cursor: default;
+
 }
 
 @keyframes waveAnim {
@@ -61,12 +62,11 @@
     }
 }
 
-.winner>span{
+.winner.active span{
     position: relative;
     animation: waveAnim 1s infinite;
     animation-delay: calc(.1s * var(--i));
     display: inline-block;
-
 }
 
 
@@ -80,6 +80,7 @@
     top: 40px;
     left: 58px;
     position: absolute;
+
 }
 
 .restart-button{
@@ -103,3 +104,9 @@
     cursor:pointer;
 }
 
+.end-screen.-active>.winner{
+    display: initial;
+}
+.end-screen.-active>.trophy-image{
+    display: initial;
+}

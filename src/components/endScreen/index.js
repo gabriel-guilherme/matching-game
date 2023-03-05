@@ -3,7 +3,7 @@ import './style.css'
 window.endScreen = {}
 window.endScreen.restartFunc = (init) => {
     let body = document.querySelector('body')
-    body.innerHTML = ''
+    body.textContent = ''
     const $root = document.createElement('div')
     $root.setAttribute('id', 'root')
     body.appendChild($root)

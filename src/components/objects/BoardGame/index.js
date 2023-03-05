@@ -13,7 +13,7 @@ window.BoardGame.handleClick = (event) =>{
         const $playerScore = document.querySelector(`.player-score[data-player="${$playerArrow.getAttribute('data-currentplayer')}"]`)
         //checkData.push($cardsActive.data)
         $cardsActive.forEach((card) => checkData.push(card.getAttribute('data-check')))
-        if($cardsActive.length >= 2){
+        if($cardsActive.length == 2){
             if(checkData.every(item => item == checkData[0])){
                 $cardsActive.forEach((card) => {
                     card.classList.add('-solid-active')
@@ -41,14 +41,21 @@ window.BoardGame.handleClick = (event) =>{
                 let player2 = document.querySelector('.player-score[data-player="2"]')
                 if(player1.getAttribute('data-points')>player2.getAttribute('data-points')){
                     document.querySelector('.end-screen').classList.add('-active')
-                    document.querySelector('.player-winner').innerHTML = 'Player1'
+                    document.querySelector('.player-winner').textContent = 'Player1'
                 }else{
                     document.querySelector('.end-screen').classList.add('-active')
-                    document.querySelector('.player-winner').innerHTML = 'Player2'
+                    document.querySelector('.player-winner').textContent = 'Player2'
                 }
+
+                document.querySelector('.end-screen.-active').addEventListener('transitionend', () => {
+                    document.querySelector('.winner').classList.add('active');
+                  });
             }
         }
+
+
     }
+
 }
 
 window.shuffleArray = cards =>{
@@ -61,7 +68,7 @@ window.shuffleArray = cards =>{
 }
 
 function BoardGame(amountCards){
-    shuffleArray(cards)
+    //shuffleArray(cards)
     
     const htmlCardsList = cards.map((card)=>CardFrontBack(card.icon, card.altIcon, card.data));
     const $htmlCards = htmlCardsList.join('');
